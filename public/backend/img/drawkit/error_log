@@ -1,0 +1,12 @@
+[28-Sep-2024 02:33:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function shell_exec() in /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code:29
+Stack trace:
+#0 /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(17): m()
+#1 /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(31): s()
+#2 /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1): eval()
+#3 /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1): eval()
+#4 /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1): eval()
+#5 /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1) : eval()'d code(1) : eval()'d code(1): eval()
+#6 /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1) : eval()'d code(1): eval()
+#7 /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1): eval()
+#8 {main}
+  thrown in /home/cityunbox/public_html/public/backend/img/drawkit/index.php(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code(1) : eval()'d code on line 29

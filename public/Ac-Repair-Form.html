@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kosi Service - Professional AC Repair</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+    <style>
+        :root {
+            --primary: #00942c;
+            --secondary: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .app-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            margin: 0 auto 1rem;
+            display: block;
+        }
+
+        /* Booking Form */
+        .booking-section {
+            padding: 2rem 1rem;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 12px rgba(0,148,44,0.15);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #007a23;
+        }
+
+        /* Services Slider */
+        .services-section {
+            padding: 4rem 1rem;
+            background: #f9f9f9;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-slider {
+            position: relative;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .services-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .service-card {
+            flex: 0 0 calc(33.333% - 1.33rem);
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .service-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .book-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background: #007a23;
+        }
+
+        /* App Download Section */
+        .app-download {
+            background: var(--primary);
+            padding: 3rem 1rem;
+            text-align: center;
+            color: var(--secondary);
+        }
+
+        .app-link {
+            display: inline-flex;
+            align-items: center;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .app-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            margin-right: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: var(--secondary);
+            padding: 3rem 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul li i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+
+        .footer-section a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #007a23;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #333;
+        }
+
+      /* Receipt Modal */
+.receipt-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+.receipt-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    z-index: 1000;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.order-id {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin: 1rem 0;
+    font-weight: bold;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.close-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: var(--secondary);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #007a23;
+}
+
+/* App Download Recommendation */
+.app-recommendation {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.app-recommendation p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.app-recommendation .app-link {
+    display: inline-flex;
+    align-items: center;
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.app-recommendation .app-link:hover {
+    background: #007a23;
+}
+
+.app-recommendation .app-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    margin-right: 0.75rem;
+}
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service-card {
+                flex: 0 0 100%;
+            }
+
+            .booking-form {
+                padding: 1.5rem;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Floating Buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.floating-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.floating-button:hover {
+    background: #007a23;
+    transform: scale(1.1);
+}
+
+.floating-button i {
+    font-size: 1.2rem;
+}
+
+/* Specific Styles for Call and Chat Buttons */
+.call-now {
+    background: #28a745; /* Green for Call */
+}
+
+.chat-now {
+    background: #25d366; /* WhatsApp Green */
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="https://firebasestorage.googleapis.com/v0/b/firstandfast-781dd.appspot.com/o/Kosi%20App%2Flogofirst.png?alt=media&token=9013d05a-6a47-47f8-8a71-e800f1f97ca6" 
+             alt="Kosi Service Logo" class="app-logo">
+        <h1>Kosi Service</h1>
+        <p>Professional AC Repair & Maintenance</p>
+    </header>
+
+    <!-- Booking Form -->
+    <section class="booking-section" id="booking-section">
+        <form class="booking-form" id="bookingForm">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 1.5rem;">Book Your AC Service</h2>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-input" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Contact Number</label>
+                <input type="tel" class="form-input" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Service Address</label>
+                <textarea class="form-input" id="address" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email">Email (Optional)</label>
+                <input type="email" class="form-input" id="email">
+            </div>
+            <button type="submit" class="submit-btn">Book Service Now</button>
+        </form>
+    </section>
+
+    <!-- Services Slider -->
+    <section class="services-section">
+        <div class="services-container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Our Services</h2>
+            <div class="services-slider">
+                <div class="services-track">
+                    <!-- Service Cards -->
+                    <div class="service-card">
+                        <img src="https://kosiservice.com/uploads/custom-images/Service-2024-12-31-04-31-41-1506.jpg" 
+                             alt="AC Installation" class="service-image">
+                        <div class="service-info">
+                            <h3 class="service-title">AC Installation</h3>
+                            <a href="#booking-section" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://kosiservice.com/uploads/custom-images/Service-2024-09-26-03-29-45-3616.jpg" 
+                             alt="AC Repair" class="service-image">
+                        <div class="service-info">
+                            <h3 class="service-title">AC Repair</h3>
+                            <a href="#booking-section" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://kosiservice.com/uploads/custom-images/Service-2024-10-25-04-59-34-7519.jpg" 
+                             alt="AC Maintenance" class="service-image">
+                        <div class="service-info">
+                            <h3 class="service-title">AC Maintenance</h3>
+                            <a href="#booking-section" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://kosiservice.com/uploads/custom-images/Service-2024-10-25-04-59-34-7519.jpg" 
+                             alt="AC Gas Refill" class="service-image">
+                        <div class="service-info">
+                            <h3 class="service-title">AC Gas Refill</h3>
+                            <a href="#booking-section" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://kosiservice.com/uploads/custom-images/Service-2024-10-25-05-00-53-2525.jpg" 
+                             alt="AC Conditioner Repair" class="service-image">
+                        <div class="service-info">
+                            <h3 class="service-title">AC Conditioner Repair</h3>
+                            <a href="#booking-section" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://kosiservice.com/uploads/custom-images/Service-2024-10-25-04-59-34-7519.jpg" 
+                             alt="AC Uninstallation" class="service-image">
+                        <div class="service-info">
+                            <h3 class="service-title">AC Uninstallation</h3>
+                            <a href="#booking-section" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- App Download Section -->
+    <section class="app-download">
+        <div class="app-container">
+            <div class="app-content">
+                <h2>Download Our App</h2>
+                <a href="https://play.google.com/store/apps/details?id=com.kosi.kosiservice" class="app-link" target="_blank">
+                    <img src="https://play-lh.googleusercontent.com/0PqVlJmVD13AHyLM_Ehkgcc08DyDgPwZRNJyDVZC2hhS3iHrFzjCFmnvjxIAx9hbfgk=w480-h960-rw" 
+                         alt="Google Play Store" class="app-icon">
+                    <div class="app-text">
+                        <span>Get it on</span>
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +91 7667538694</li>
+                    <li><i class="fas fa-envelope"></i> kosi@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Boring Road, Patna, Bihar</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kosi Service. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="receipt-overlay" id="receiptOverlay"></div>
+    <div class="receipt-modal" id="receiptModal">
+        <h2>Booking Confirmed! 🎉</h2>
+        <p>Your Order ID: <span class="order-id" id="orderId"></span></p>
+        <p>Our team will contact you shortly.</p>
+    
+        <!-- App Download Recommendation -->
+        <div class="app-recommendation">
+            <p>For faster service and exclusive offers, download our app!</p>
+            <a href="https://play.google.com/store/apps/details?id=com.kosi.kosiservice" class="app-link" target="_blank">
+                <img src="https://play-lh.googleusercontent.com/0PqVlJmVD13AHyLM_Ehkgcc08DyDgPwZRNJyDVZC2hhS3iHrFzjCFmnvjxIAx9hbfgk=w480-h960-rw" 
+                     alt="Google Play Store" class="app-icon">
+                <div class="app-text">
+                    <span>Get it on</span>
+                    <strong>Google Play</strong>
+                </div>
+            </a>
+        </div>
+    
+        <button onclick="closeReceipt()" class="close-btn">Close</button>
+    </div>
+<!-- Floating Buttons -->
+<div class="floating-buttons">
+    <a href="tel:+917667538694" class="floating-button call-now">
+        <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/917667538694" class="floating-button chat-now">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+    <script type="module">
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+        // Firebase Initialization
+        const firebaseConfig = {
+            apiKey: "AIzaSyBScD54azyQNpWJ03bQ8fX-NEOmWvqho4s",
+            authDomain: "firstandfast-781dd.firebaseapp.com",
+            databaseURL: "https://firstandfast-781dd-default-rtdb.firebaseio.com",
+            projectId: "firstandfast-781dd",
+            storageBucket: "firstandfast-781dd.appspot.com",
+            messagingSenderId: "987733786476",
+            appId: "1:987733786476:web:fd03f93c768ed7f0273d49",
+            measurementId: "G-VEVLPJJL1B"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Show Receipt Modal with Confetti
+        function showReceiptModal() {
+            document.getElementById('receiptOverlay').style.display = 'block';
+            document.getElementById('receiptModal').style.display = 'block';
+
+            // Trigger Confetti
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        // Close Receipt Modal
+        window.closeReceipt = () => {
+            document.getElementById('receiptOverlay').style.display = 'none';
+            document.getElementById('receiptModal').style.display = 'none';
+        };
+
+        // Form Submission
+        document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const bookingData = {
+                name: document.getElementById('name').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                address: document.getElementById('address').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const orderId = `KS-${Math.floor(10000 + Math.random() * 90000)}`;
+                const bookingsRef = ref(database, 'WebOrder');
+                const newBookingRef = push(bookingsRef);
+
+                await set(newBookingRef, {
+                    ...bookingData,
+                    orderId
+                });
+
+                document.getElementById('orderId').textContent = orderId;
+                showReceiptModal(); // Show modal with confetti
+                document.getElementById('bookingForm').reset();
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+            }
+        });
+    </script>
+    <script>
+        // Services Slider
+        let currentService = 0;
+        const servicesTrack = document.querySelector('.services-track');
+        const serviceCards = document.querySelectorAll('.service-card');
+        let autoSlideInterval;
+
+        function updateSlider() {
+            const cardWidth = serviceCards[0].offsetWidth + 32; // Include margins
+            servicesTrack.style.transform = `translateX(-${currentService * cardWidth}px)`;
+        }
+
+        function nextSlide() {
+            currentService = (currentService + 1) % serviceCards.length;
+            updateSlider();
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 3000);
+        }
+
+        // Pause on hover
+        document.querySelector('.services-slider').addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        document.querySelector('.services-slider').addEventListener('mouseleave', startAutoSlide);
+
+        // Initialize
+        startAutoSlide();
+    </script>
+
+
+<script>
+    // Track Floating Button Clicks
+    document.querySelector('.call-now').addEventListener('click', () => {
+        console.log('Call Now button clicked');
+        // Add analytics or other tracking here
+    });
+
+    document.querySelector('.chat-now').addEventListener('click', () => {
+        console.log('Chat Now button clicked');
+        // Add analytics or other tracking here
+    });
+</script>
+</body>
+</html>

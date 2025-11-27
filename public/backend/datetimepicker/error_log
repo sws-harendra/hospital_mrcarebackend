@@ -1,0 +1,2 @@
+[28-Sep-2024 02:33:10 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in index.zip#class.txt on line 2
+[28-Sep-2024 02:33:11 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in index.zip#class.txt on line 2
