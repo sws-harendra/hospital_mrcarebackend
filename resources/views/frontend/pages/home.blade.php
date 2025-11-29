@@ -73,7 +73,7 @@
                             src="{{ asset($doctor->profile_image ?? 'img/default-doctor.png') }}" 
                             alt="{{ $doctor->name }}" 
                             class="w-24 h-24 object-cover rounded-full border-4 border-gray-200 mx-auto mb-3 shadow-md group-hover:border-fuchsia-700 transition"
-                            onerror="this.src='{{ asset('img/default-doctor.png') }}';"
+                            
                         >
                         <h3 class="text-xl font-bold text-gray-900 truncate">{{ $doctor->name }}</h3>
                         <p class="text-sm text-fuchsia-700 font-semibold mt-1">{{ $doctor->specialization ?? 'Specialist' }}</p>
