@@ -14,7 +14,7 @@
                 src="{{ asset($slider->image) }}" 
                 alt="{{ $slider->title }}" 
                 class="w-full h-full object-cover object-center"
-                onerror="this.src='{{ asset('img/fallback.jpg') }}';"
+                
             >
             <div class="absolute inset-0 bg-gray-900/60 flex flex-col items-start justify-center text-white px-6 md:px-20">
                 <div class="max-w-3xl text-left">
@@ -161,7 +161,7 @@
                         src="{{ asset($hospital->main_image ?? 'img/hospital-default.jpg') }}" 
                         alt="{{ $hospital->name }} Logo" 
                         class="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-xl border-4 border-white shadow-md bg-white group-hover:border-fuchsia-700 transition"
-                        onerror="this.src='{{ asset('img/hospital-default.jpg') }}';"
+                        
                     >
                 </div>
 
