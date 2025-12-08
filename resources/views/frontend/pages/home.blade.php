@@ -13,7 +13,7 @@
             <img 
                 src="{{ asset($slider->image) }}" 
                 alt="{{ $slider->title }}" 
-                class="w-full h-full object-cover object-center"
+                class="w-full h-full object-full object-center"
                 
             >
             <div class="absolute inset-0 bg-gray-900/60 flex flex-col items-start justify-center text-white px-6 md:px-20">
