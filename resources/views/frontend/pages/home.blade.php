@@ -154,13 +154,13 @@
                 $mapUrl = $hospitalAddress ? 'https://www.google.com/maps/search/?api=1&query=' . urlencode($hospitalAddress) : '#';
             @endphp
             
-            <div class="bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-8 border-fuchsia-600 p-4 sm:p-6 flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-8 w-full group">
+            <div class="bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-r-4 border-fuchsia-600 p-4  flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-8 w-full group">
                 
                 <div class="flex-shrink-0 w-full sm:w-auto flex justify-center">
                     <img 
                         src="{{ asset($hospital->main_image ?? 'img/hospital-default.jpg') }}" 
                         alt="{{ $hospital->name }} Logo" 
-                        class="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-xl border-4 border-white shadow-md bg-white group-hover:border-fuchsia-700 transition"
+                        class="w-40 h-40 sm:w-40 sm:h-40 object-cover rounded-xl  border-white shadow-md bg-white group-hover:border-fuchsia-700 transition"
                         
                     >
                 </div>
